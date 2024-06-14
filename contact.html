@@ -173,13 +173,13 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="leave-comment">
-                        <form action="https://api.web3forms.com/submit" method="POST">
+                        <form action="https://api.web3forms.com/submit" method="POST" onsubmit="sendToWhatsapp()">
                             <input type="hidden" name="access_key" value="f9ce02a8-5864-4ff0-a5e6-4b09b04f9b45">
-                            <input type="text" id="name" placeholder="Name">
-                            <input type="text" id="email" placeholder="Email">
-                            <input type="text" id="subject" placeholder="subject">
-                            <textarea id="Comment" placeholder="Comment"></textarea>
-                            <button onsubmit="sendToWhatsapp()" type="submit">Submit</button>
+                            <input type="text" id="name" name="name" placeholder="Name">
+                            <input type="text" id="email" name="email" placeholder="Email">
+                            <input type="text" id="subject" name="subject" placeholder="Subject">
+                            <textarea id="Comment" name="comment" placeholder="Comment"></textarea>
+                            <button type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -323,21 +323,22 @@
     <script src="js/main.js"></script>
     <script>
         function sendToWhatsapp(){
-	    let number = "+918972947446";
+        let number = "+918553075003";
 
-	let name = document.getElementById('name').value;
-	let email = document.getElementById('email').value;
-	let subject = document.getElementById('subject').value;
-  let body = document.getElementById('comment').value;
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let subject = document.getElementById('subject').value;
+        let body = document.getElementById('Comment').value;
 
-	var url = "https://wa.me/" + number + "?text="
-	+ "Name : " +name+ "%0a"
-	+ "Email : " +email+ "%0a"
-	+ "Subject : " +subject + "%0a"
-  +"Body : " +body+ "%0a%0a";
+        var url = "https://wa.me/" + number + "?text="
+        + "Name : " + name + "%0a"
+        + "Email : " + email + "%0a"
+        + "Subject : " + subject + "%0a"
+        + "Comment : " + body + "%0a%0a";
 
-	window.open(url, '_blank').focus();
-}
+        // window.location.href = url;
+        window.open(url).focus();
+    }
     </script>
 
 
