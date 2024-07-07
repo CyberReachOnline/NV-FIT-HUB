@@ -88,7 +88,9 @@ img {
 	/* max-width: 100%; */
 	width: 80px;
 }
-
+li{
+	text-shadow: 2px 2px #000000;
+}
 input:focus,
 select:focus,
 button:focus,
@@ -112,7 +114,16 @@ ol {
 /*---------------------
   Helper CSS
 -----------------------*/
-
+@media (max-width:567px) {
+	#hero{
+		background-image: url("/img/hero/hero-3.jpg") !important;
+	}
+	.hi-text{
+		text-align: center;
+		padding-top: 10vh;
+		text-shadow: 2px 2px #000000;
+	}
+}
 .section-title {
 	margin-bottom: 45px;
 	text-align: center;
@@ -546,7 +557,9 @@ ol {
 	align-content: center;
 	padding-top: 355px;
 }
-
+.hi-text{
+	text-shadow: 2px 2px #000000;
+}
 .hs-slider .hs-item .hi-text span {
 	display: block;
 	font-size: 18px;
